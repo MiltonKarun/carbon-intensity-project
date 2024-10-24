@@ -17,8 +17,8 @@ carbon-intensity-project/
 
 ## Installation
 
-Clone the repository.
-```git clone ```
+Clone the repository.  
+```git clone https://github.com/MiltonKarun/carbon-intensity-project.git```
 
 Navigate to the project directory.
 ```cd carbon-intensity-project```
