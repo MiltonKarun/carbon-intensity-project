@@ -1,7 +1,7 @@
-# Carbon Intensity Service
+# Carbon Intensity Project
 
 ## Overview
-This project fetches and processes the carbon intensity data from the Electricity Maps API and calculates the average carbon intensity over a given period. The results are displayed in a tabular format along with the calculated average.
+This project fetches and processes the carbon intensity data from the given API and calculates the average carbon intensity (in gCO2eq/kWh) over the last 24 hours. The results are displayed in a tabular format along with the calculated average.
 
 ## Project Structure
 
@@ -20,7 +20,7 @@ carbon-intensity-project/
 Clone the repository  
 ```git clone https://github.com/MiltonKarun/carbon-intensity-project.git```
 
-Navigate to the project directory  
+Optional: Navigate to the project directory  
 ```cd carbon-intensity-project```
 
 Install the required dependencies  
