@@ -17,19 +17,19 @@ carbon-intensity-project/
 
 ## Installation
 
-Clone the repository.  
+Clone the repository  
 ```git clone https://github.com/MiltonKarun/carbon-intensity-project.git```
 
-Navigate to the project directory.
+Navigate to the project directory  
 ```cd carbon-intensity-project```
 
-Install the required dependencies.
+Install the required dependencies  
 ```pip install -r requirements.txt```
 
-Usage: Run the project using the following command:
+Usage: Run the project using the following command  
 ```python main.py```
 
-### Best Coding Practices Followed:
+### Coding Practices Followed:
 1. **Separation of Concerns**: Each class has its own responsibility and is placed in separate files.
 2. **Error Handling**: Used `try-except` blocks for error handling when making API requests.
 3. **Static Methods**: Used `@staticmethod` when the method did not need access to the instance.
