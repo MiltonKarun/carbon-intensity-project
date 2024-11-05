@@ -41,6 +41,6 @@ class CarbonIntensityService:
         intensities = [entry['intensity'] for entry in processed_data]
         try:
             avg_intensity = self.processor.calculate_average_intensity(intensities)
-            print(f"\nAverage Carbon Intensity over the last 24 hours: {avg_intensity:.2f} gCO2eq/kWh")
+            print(f"\nAverage Carbon Intensity in the {self.region} over the last 24 hours: {avg_intensity:.2f} gCO2eq/kWh")
         except ValueError as ve:
             print(ve)
