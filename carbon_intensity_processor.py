@@ -76,7 +76,7 @@ class CarbonIntensityProcessor:
 
         # Generate .csv file using carbon intensity data
         output_file_csv = "carbon_intensity_data.csv"
-        
+
         with open(output_file_csv, mode='w', newline='') as file:
             writer = csv.writer(file)
             writer.writerow(["Timestamp", "Carbon Intensity (gCO2eq/kWh)"])  # Header
@@ -120,14 +120,12 @@ class CarbonIntensityProcessor:
                 </tr>
             """
         
-        # Close the HTML tags
         html_content += """
             </table>
         </body>
         </html>
         """
         
-        # Save the HTML content to a file
         with open(output_file_html, "w") as file:
             file.write(html_content)
         
