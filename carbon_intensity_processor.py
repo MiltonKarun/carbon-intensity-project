@@ -1,4 +1,5 @@
 import numpy as np
+import csv
 from datetime import datetime
 from typing import List, Dict
 
@@ -61,6 +62,7 @@ class CarbonIntensityProcessor:
     def display_data(processed_data: List[Dict]) -> None:
         """
         Display the processed carbon intensity data in a tabular format.
+        Generate .csv and .html files for user visualisation.
 
         Parameters
         ----------
@@ -71,3 +73,62 @@ class CarbonIntensityProcessor:
         print("-" * 50)
         for entry in processed_data:
             print(f"{entry['timestamp']:<20} | {entry['intensity']:.2f}")
+
+        # Generate .csv file using carbon intensity data
+        output_file_csv = "carbon_intensity_data.csv"
+        
+        with open(output_file_csv, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Timestamp", "Carbon Intensity (gCO2eq/kWh)"])  # Header
+            for entry in processed_data:
+                writer.writerow([entry['timestamp'], f"{entry['intensity']:.2f}"])
+                
+        print(f"\nData saved to {output_file_csv}")
+
+        # Generate .html file using carbon intensity data
+        output_file_html = "carbon_intensity_data.html"
+        
+        html_content = """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Carbon Intensity Data</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                table { width: 100%; border-collapse: collapse; }
+                th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+                th { background-color: #f2f2f2; }
+            </style>
+        </head>
+        <body>
+            <h2>Carbon Intensity Data</h2>
+            <table>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Carbon Intensity (gCO2eq/kWh)</th>
+                </tr>
+        """
+        
+        # Add each data entry as a row in the table
+        for entry in processed_data:
+            html_content += f"""
+                <tr>
+                    <td>{entry['timestamp']}</td>
+                    <td>{entry['intensity']:.2f}</td>
+                </tr>
+            """
+        
+        # Close the HTML tags
+        html_content += """
+            </table>
+        </body>
+        </html>
+        """
+        
+        # Save the HTML content to a file
+        with open(output_file_html, "w") as file:
+            file.write(html_content)
+        
+        print(f"\nData saved to {output_file_html}")
